@@ -22,7 +22,7 @@ logging.basicConfig(filename="jarvis.log", level=logging.INFO,
 
 # ---------------------- Cohere Setup ----------------------
 try:
-    co = cohere.Client("MLwMfd8NNIHQu4XCKc9g5exdVw0SIAYbD0oaZZj9")
+    co = cohere.Client("API_KEY") #Replace With Your Cohere API Key
     logging.info("Cohere client initialized successfully.")
 except Exception as e:
     logging.error(f"Cohere initialization failed: {e}")
@@ -365,7 +365,7 @@ def speak_and_type(text, gui):
 def get_weather():
     try:
         city = "Kannur"
-        api_key = "a87d91d0b889d1865fd01f916814a534"
+        api_key = "API_KEY" #replace with your api key
         url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
         data = requests.get(url, timeout=5).json()
         temp = data["main"]["temp"]
